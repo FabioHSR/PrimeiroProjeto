@@ -32,7 +32,7 @@ public class Programa113022020 {
             boolean parsable = Metodos.isParsableInt(input);
             if (parsable) {
                 escolha = Integer.parseInt(input);
-                if (escolha >= 1 && escolha <= 2) {
+                if (escolha >= 1 && escolha <= 4) {
                     inputValido = true;
                 } else {
                     System.out.println("Favor selecionar uma opção do menu.");
@@ -53,7 +53,7 @@ public class Programa113022020 {
                 Tanque.tanquesToTXT();
                 break;
             case 4:
-                Tanque.carregaTanquesDoTXT();;
+                System.out.println(Tanque.carregaTanquesDoTXT());
                 break;
         }
 

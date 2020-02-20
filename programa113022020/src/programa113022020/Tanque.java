@@ -28,7 +28,7 @@ public class Tanque {
         System.out.println(Tanque.tanquesToString());
     }
 
-    static void carregaTanquesDoTXT() {
+    static String carregaTanquesDoTXT() {
         try {
             File myObj = new File("tanques.txt");
             Scanner myReader = new Scanner(myObj);
@@ -42,9 +42,9 @@ public class Tanque {
                         Double.parseDouble(array[2]));
             }
             myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Ocorreu um erro ao carregar os dados, verifique o TXT (nome(string);ph(double);temperatura(double).");
-            e.printStackTrace();
+            return "Dados carregados";
+        } catch (FileNotFoundException e) {            
+            return("Ocorreu um erro ao carregar os dados, verifique o TXT (nome(string);ph(double);temperatura(double).");
         }
     }
 
@@ -126,6 +126,7 @@ public class Tanque {
             }
             linha += "\n";
         }
+        linha=linha.trim();
         return linha;
     }
 
